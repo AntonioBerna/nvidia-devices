@@ -65,9 +65,9 @@ if you have installed everything correctly you should get something similar to t
 
 Finally these are the hardware and software specifications regarding my setup:
 
-- Operating System: Manjaro Linux 24.0.1
-- GPU: NVIDIA GeForce MX150
-- CUDA version: 12.5
+|   Operating System   |          GPU         | CUDA version |
+| -------------------- | -------------------- | ------------ |
+| Manjaro Linux 24.0.1 | NVIDIA GeForce MX150 |     12.5     |
 
 ## Mini docs
 
