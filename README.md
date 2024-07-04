@@ -16,13 +16,13 @@ The first step is to download the [CUDA Toolkit](https://developer.nvidia.com/cu
 
 Once the installation of all the tools I mentioned previously (including the drivers) has been completed, run this command:
 
-```shell
+```
 nvcc --version
 ```
 
 and you should get the version, i.e. something like this:
 
-```shell
+```
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2024 NVIDIA Corporation
 Built on Wed_Apr_17_19:19:55_PDT_2024
@@ -65,33 +65,33 @@ if you have installed everything correctly you should get something similar to t
 
 Finally these are the hardware and software specifications regarding my setup:
 
-|   Operating System   |          GPU         | CUDA version |
-| -------------------- | -------------------- | ------------ |
-| Manjaro Linux 24.0.1 | NVIDIA GeForce MX150 |     12.5     |
+| Operating System     | GPU                  | CUDA  |
+| :---:                | :---:                | :---: |
+| Manjaro Linux 24.0.1 | NVIDIA GeForce MX150 | v12.5 |
 
 ## Mini docs
 
 At this point the bulk of the work has been done. In fact, it will be sufficient to download this repository with the following command:
 
-```shell
+```
 git clone https://github.com/AntonioBerna/nvidia-devices.git
 ```
 
 by entering the `nvidia-devices` working directory you will find the `CMakeLists.txt` file, then using the following command:
 
-```shell
+```
 cmake . -B build
 ```
 
 the procedure for creating the `Makefile` will begin inside the `build` directory. Subsequently accessing the `build` directory with the `cd build` command and using the `make` command will generate the executable file. Then using the command:
 
-```shell
+```
 ./nvidia-devices
 ```
 
 we obtain:
 
-```shell
+```
 Detected 1 CUDA Capable device(s)
 
 Device 0: "NVIDIA GeForce MX150"
