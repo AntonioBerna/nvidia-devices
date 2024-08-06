@@ -83,10 +83,10 @@ by entering the `nvidia-devices` working directory you will find the `CMakeLists
 cmake . -B build
 ```
 
-the procedure for creating the `Makefile` will begin inside the `build` directory. Subsequently accessing the `build` directory with the `cd build` command and using the `make` command will generate the executable file. Then using the command:
+the procedure for creating the `Makefile` will begin inside the `build` directory. Subsequently using the command:
 
 ```
-./nvidia-devices
+./build/nvidia-devices
 ```
 
 we obtain:
@@ -95,12 +95,14 @@ we obtain:
 Detected 1 CUDA Capable device(s)
 
 Device 0: "NVIDIA GeForce MX150"
-  Compute Capability: 6.1
-  Total amount of global memory: 1994.38 MB
-  Number of multiprocessors: 3
-  Max threads for multiprocessor: 2048
-  Max threads per block: 1024
-  Max block dimensions: [1024, 1024, 64]
-  Max grid dimensions: [2147483647, 65535, 65535]
+	Total amount of global memory: 1994.38 MB
+	Number of multiprocessors: 3
+	Max threads per multiprocessor: 2048
+	Max threads per block: 1024
+	Max block dimensions: [1024, 1024, 64]
+	Max grid dimensions: [2147483647, 65535, 65535]
+	Compute Capability: 6.1
 ```
 
+> [!NOTE]
+> Since the detected graphics card, namely the `NVIDIA GeForce MX150`, has a `Compute Capability` of `6.1`, this implies that when using the GPU to perform calculations you will need to add the `set(CMAKE_CUDA_ARCHITECTURES 61)` line of code to `CMakeLists.txt` file.
