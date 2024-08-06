@@ -86,7 +86,13 @@ cmake . -B build
 the procedure for creating the `Makefile` will begin inside the `build` directory. Subsequently using the command:
 
 ```
-./build/nvidia-devices
+cd build && make
+```
+
+and finally:
+
+```
+./nvidia-devices
 ```
 
 we obtain:
