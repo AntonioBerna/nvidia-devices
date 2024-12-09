@@ -6,4 +6,4 @@
 *.fatbin
 
 # Others
-build
+bin

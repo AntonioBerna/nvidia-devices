@@ -77,38 +77,47 @@ At this point the bulk of the work has been done. In fact, it will be sufficient
 git clone https://github.com/AntonioBerna/nvidia-devices.git
 ```
 
-by entering the `nvidia-devices` working directory you will find the `CMakeLists.txt` file, then using the following command:
+by entering the `nvidia-devices` working directory you will find the `Makefile` file, then using the following command:
 
 ```
-cmake . -B build
-```
-
-the procedure for creating the `Makefile` will begin inside the `build` directory. Subsequently using the command:
-
-```
-cd build && make
+make
 ```
 
 and finally:
 
 ```
-./nvidia-devices
+./bin/nvidia-devices
 ```
 
 we obtain:
 
 ```
-Detected 1 CUDA Capable device(s)
+===== CUDA DEVICE 0 COMPREHENSIVE REPORT =====
+Device Name: NVIDIA GeForce MX150
+Architecture: Pascal (Compute 6.1)
+Total Global Memory: 1.95 GB
 
-Device 0: "NVIDIA GeForce MX150"
-	Total amount of global memory: 1994.38 MB
-	Number of multiprocessors: 3
-	Max threads per multiprocessor: 2048
-	Max threads per block: 1024
-	Max block dimensions: [1024, 1024, 64]
-	Max grid dimensions: [2147483647, 65535, 65535]
-	Compute Capability: 6.1
+--- Warp Characteristics ---
+Warp Size: 32 threads
+Max Active Warps per SM: 64
+
+--- Advanced Capabilities ---
+Compute Capabilities:
+ - Async Engine Count: 2
+ - Unified Addressing: Supported
+ - Managed Memory: Supported
+ - Concurrent Kernel Execution: Supported
+ - Cooperative Launch: Supported
+
+--- Advanced Memory Specifications ---
+Memory Types:
+ - Surface Memory: Supported
+ - Texture Memory: Supported
+
+Cache Specifications:
+ - L2 Cache Size: 512 KB
+
+--- Numerical Compute Capabilities ---
+Double Precision Performance: Supported
+Tensor Cores: Not Available
 ```
-
-> [!NOTE]
-> Since the detected graphics card, namely the `NVIDIA GeForce MX150`, has a `Compute Capability` of `6.1`, this implies that when using the GPU to perform calculations you will need to add the `set(CMAKE_CUDA_ARCHITECTURES 61)` line of code to `CMakeLists.txt` file.
