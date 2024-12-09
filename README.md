@@ -77,16 +77,22 @@ At this point the bulk of the work has been done. In fact, it will be sufficient
 git clone https://github.com/AntonioBerna/nvidia-devices.git
 ```
 
-by entering the `nvidia-devices` working directory you will find the `Makefile` file, then using the following command:
+by entering the `nvidia-devices` working directory you will find the `CMakeLists.txt` file, then using the following command:
 
 ```
-make
+cmake -S . -B build
+```
+
+let's generate the `Makefile` for our operating system. Then using the command:
+
+```
+cmake --build build/
 ```
 
 and finally:
 
 ```
-./bin/nvidia-devices
+./build/nvidia-devices
 ```
 
 we obtain:
