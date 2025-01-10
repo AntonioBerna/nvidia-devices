@@ -127,3 +127,7 @@ Cache Specifications:
 Double Precision Performance: Supported
 Tensor Cores: Not Available
 ```
+
+> [!NOTE]
+> Since the detected graphics card, namely the `NVIDIA GeForce MX150`, has a `Compute Capability` of `6.1`, this implies that when using the GPU to perform calculations you will need to add the `set(CMAKE_CUDA_ARCHITECTURES 61)` line of code to `CMakeLists.txt` file.
+
